@@ -119,6 +119,7 @@ stds.roblox = {
                 InsertObjectsAndJoinIfLegacyAsync = read_write;
                 GraphicsQualityChangeRequest = read_write;
                 Loaded = read_write;
+                Close = read_write;
                 ScreenshotReady = read_write;
                 FindService = read_write;
                 GetService = read_write;
