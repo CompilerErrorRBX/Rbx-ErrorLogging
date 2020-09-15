@@ -8,4 +8,4 @@ jobs:
       - name: lint
         uses: Roang-zero1/factorio-mod-luacheck@master
         with:
-          luacheckrc_url: https://raw.githubusercontent.com/Quenty/NevermoreEngine/version2/.luacheckrc
+          luacheckrc_url: https://raw.githubusercontent.com/Stephen-Martin/Rbx-ErrorLogging/.luacheckrc
