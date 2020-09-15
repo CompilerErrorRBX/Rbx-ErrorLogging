@@ -1,6 +1,8 @@
 --- Handles logging throughout the place and reports log traces to Slack.
 -- @author CompilerError
 
+local game = game;
+
 local AssetService = game:GetService('MarketplaceService');
 local ReplicatedStorage = game:GetService('ReplicatedStorage');
 local ReplicatedFirst = game:GetService('ReplicatedFirst');
@@ -115,6 +117,8 @@ if (Config.LoggingEnabled) then
       end
     end
 
+    local footer = 'GameId: ' ..game.GameId.. '; PlaceId: ' ..game.PlaceId.. '; Version ' ..game.PlaceVersion;
+
     local report = Template;
     report = report:gsub('<COLOR>', Config.Report.Settings.Colors[trace.Type] or '#F44336');
     report = report:gsub('<GAMENAME>', game_name);
@@ -122,7 +126,7 @@ if (Config.LoggingEnabled) then
     report = report:gsub('<ERRORMESSAGE>', trace.Message);
     report = report:gsub('<LABELS>', labels);
     report = report:gsub('<TIMESTAMP>', os.time());
-    report = report:gsub('<FOOTER>', 'GameId: ' ..game.GameId.. '; PlaceId: ' ..game.PlaceId.. '; Version ' ..game.PlaceVersion);
+    report = report:gsub('<FOOTER>', footer);
 
     slack_reporter:PostRaw([[{
       "attachments": [

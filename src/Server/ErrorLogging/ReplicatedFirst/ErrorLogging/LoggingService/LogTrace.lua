@@ -36,7 +36,7 @@ end
 
 --- Applies the log trace reoccurrence to this log trace.
 function LogTrace:Reoccurrence()
-  self.Occurrences += 1;
+  self.Occurrences = self.Occurrences + 1;
   self.LastOccurrence = os.time();
 end
 
