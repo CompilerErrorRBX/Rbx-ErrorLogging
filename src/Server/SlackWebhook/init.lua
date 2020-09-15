@@ -2,7 +2,6 @@
 -- @author CompilerError
 -- @classmod SlackWebhook
 
-local HttpService = game:GetService('HttpService');
 local Http = require(script.HttpHandler);
 
 local SlackWebhook = {};

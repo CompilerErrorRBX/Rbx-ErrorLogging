@@ -110,7 +110,7 @@ if (Config.LoggingEnabled) then
 
     if (logged[trace.Message]) then
       if (not Config.RepeatLogs or (Config.MaximumLogRepeats and logged[trace.Message] > Config.MaximumLogRepeats)) then
-        logged[trace.Message] += 1;
+        logged[trace.Message] = logged[trace.Message] + 1;
         return;
       end
     end
